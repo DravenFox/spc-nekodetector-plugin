@@ -61,14 +61,13 @@ Generate Release:
   needs:
     - job: Build Test
       artifacts: false
-#    - job: Docker Test
-#      artifacts: false
   script:
     - npx semantic-release
   rules:
     - if: '$CI_COMMIT_BRANCH == "alpha" && $CI_COMMIT_TITLE !~ /^RELEASE:.+$/ && $CI_SERVER_HOST == "git.griefed.de"'
     - if: '$CI_COMMIT_BRANCH == "beta" && $CI_COMMIT_TITLE !~ /^RELEASE:.+$/ && $CI_SERVER_HOST == "git.griefed.de"'
     - if: '$CI_COMMIT_BRANCH == "main" && $CI_COMMIT_TITLE !~ /^RELEASE:.+$/ && $CI_SERVER_HOST == "git.griefed.de"'
+    - if: '$CI_COMMIT_BRANCH == "master" && $CI_COMMIT_TITLE !~ /^RELEASE:.+$/ && $CI_SERVER_HOST == "git.griefed.de"'
 
 Build Release:
   stage: Build Release
