@@ -1,3 +1,10 @@
+## [1.0.2](https://git.griefed.de/Griefed/spc-nekodetector-plugin/compare/1.0.1...1.0.2) (2023-06-10)
+
+
+### 🛠 Fixes
+
+* **CI:** Correctly set dependencies for news-job ([d24b70d](https://git.griefed.de/Griefed/spc-nekodetector-plugin/commit/d24b70d4185adc9aeb8e9320f1aa7e13140c1d0f))
+
 ## [1.0.1](https://git.griefed.de/Griefed/spc-nekodetector-plugin/compare/1.0.0...1.0.1) (2023-06-10)
 
 
