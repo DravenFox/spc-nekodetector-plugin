@@ -2,6 +2,8 @@
 
 This is a plugin for [ServerPackCreator](https://github.com/Griefed/ServerPackCreator)
 
+**NOTE:** This plugin requires at least [ServerPackCreator version 4.1.5](https://github.com/Griefed/ServerPackCreator/releases/tag/4.1.5) 
+
 This plugin, once installed, automatically scans your modpack and server pack for infections when you start the generation
 of a new server pack and informs you about any found infections, or if no infections were found.
 
