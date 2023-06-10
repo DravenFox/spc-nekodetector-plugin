@@ -1,6 +1,6 @@
 branches: [
     'main',
-    'master'
+    'master',
   {
     name: 'alpha',
     prerelease: true
