@@ -3,7 +3,6 @@ import java.util.*
 
 plugins {
     id("serverpackcreator.kotlin-conventions")
-    //id("com.github.johnrengelman.shadow") version "8.1.1"
     kotlin("kapt")
 }
 
@@ -54,20 +53,11 @@ tasks.processResources {
     }
 }
 
-
-/*tasks.shadowJar {
-    archiveClassifier.set("")
-}
-
-tasks.build {
-    dependsOn(tasks.shadowJar)
-}*/
-
 tasks.jar {
     val dependencies = configurations
         .runtimeClasspath
         .get()
-        .map(::zipTree) // OR .map { zipTree(it) }
+        .map(::zipTree)
     from(dependencies)
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest {
