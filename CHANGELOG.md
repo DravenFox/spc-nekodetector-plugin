@@ -1,3 +1,15 @@
+## [1.0.1](https://git.griefed.de/Griefed/spc-nekodetector-plugin/compare/1.0.0...1.0.1) (2023-06-10)
+
+
+### 🦊 CI/CD
+
+* Allow manual trigger on GitHub release workflow ([cdf8e0f](https://git.griefed.de/Griefed/spc-nekodetector-plugin/commit/cdf8e0f472a0706334a786bca10402a9984ac6bf))
+
+
+### 🛠 Fixes
+
+* **CI:** Correctly set dependencies for release-job ([869fd88](https://git.griefed.de/Griefed/spc-nekodetector-plugin/commit/869fd889436216a2446452b111fc9dca3291e8c1))
+
 ## [1.0.0](https://git.griefed.de/Griefed/spc-nekodetector-plugin/compare/...1.0.0) (2023-06-10)
 
 
