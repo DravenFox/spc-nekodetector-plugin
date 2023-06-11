@@ -1,3 +1,26 @@
+## [1.1.0](https://git.griefed.de/Griefed/spc-nekodetector-plugin/compare/1.0.2...1.1.0) (2023-06-11)
+
+
+### ⏩ Performance
+
+* Remove unnecessary scan to decrease server pack generation time ([97f0974](https://git.griefed.de/Griefed/spc-nekodetector-plugin/commit/97f0974dbadd9aedfe6c5f00ea1f87ad977f6f84))
+
+
+### 💎 Improvements
+
+* Only display dialog when infections are found, decreasing annoyance by plugin ([3c9c069](https://git.griefed.de/Griefed/spc-nekodetector-plugin/commit/3c9c06922da99e37c4a063f1c90af1ce986e1039))
+
+
+### 📦 Other
+
+* Readme and Changelog updates ([aade136](https://git.griefed.de/Griefed/spc-nekodetector-plugin/commit/aade1367744abdb00559d3b5f148101ca6d69d5a))
+
+
+### 🦊 CI/CD
+
+* Merge release and jar jobs to hopefully fix GitHub release pipeline ([5abfa41](https://git.griefed.de/Griefed/spc-nekodetector-plugin/commit/5abfa4135d529808ea237b4170826069bd407fe0))
+* Remove not needed jobs ([62844fe](https://git.griefed.de/Griefed/spc-nekodetector-plugin/commit/62844fea8c1baf49978a554d5fc85a48a34af2f5))
+
 ## [1.0.2](https://git.griefed.de/Griefed/spc-nekodetector-plugin/compare/1.0.1...1.0.2) (2023-06-10)
 
 
