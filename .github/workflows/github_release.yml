@@ -27,7 +27,7 @@ jobs:
       - name: Use tag
         run: echo ${{steps.tag.outputs.tag}}
 
-  jar:
+  release:
     needs: preparations
     runs-on: ubuntu-latest
 
@@ -68,17 +68,6 @@ jobs:
             build/libs/spc-nekodetector-plugin-${{ needs.preparations.outputs.version }}.jar
           if-no-files-found: warn # 'warn' or 'ignore' are also available, defaults to `warn`
 
-  release:
-    runs-on: ubuntu-latest
-    needs: [preparations, jar]
-
-    steps:
-      # GET THE LATEST CODE
-      - name: Checkout latest code
-        uses: actions/checkout@v3.5.2
-        with:
-          fetch-depth: 0
-
       # GET RELEASE INFO
       - name: Get Release Info
         run: |
@@ -101,13 +90,8 @@ jobs:
         run: |
           if [[ $(wc -c description.txt | awk '{print $1}') -ge 10000 ]]; then
             truncate -s 10000 description.txt
-            printf "\n\n............\n\nRelease notes truncated. For more details, see the [CHANGELOG](https://github.com/Griefed/ServerPackCreator/blob/main/CHANGELOG.md).\n\n" >> description.txt
+            printf "\n\n............\n\nRelease notes truncated. For more details, see the [CHANGELOG](https://github.com/Griefed/spc-nekodetector-plugin/blob/master/CHANGELOG.md).\n\n" >> description.txt
           fi
-
-      - name: Download Artifacts
-        uses: actions/download-artifact@v3.0.2
-        with:
-          name: release-artifacts
 
       # GENERATE RELEASE
       - name: Create Release
@@ -122,4 +106,4 @@ jobs:
           prerelease: false
           fail_on_unmatched_files: false
           files: |
-            spc-nekodetector-plugin-${{ needs.preparations.outputs.version }}.jar
+            build/libs/spc-nekodetector-plugin-${{ needs.preparations.outputs.version }}.jar
