@@ -28,6 +28,8 @@ import me.cortex.jarscanner.Main
 import me.cortex.jarscanner.Results
 import org.apache.logging.log4j.LogManager
 import java.awt.Desktop
+import java.awt.Frame
+import java.awt.Window
 import java.nio.file.Path
 import javax.swing.JDialog
 import javax.swing.JOptionPane
@@ -46,7 +48,7 @@ abstract class PerformScan {
                     pluginsLog.info(entry)
                     message += "$entry\n"
                 }
-                if (Desktop.isDesktopSupported()) {
+                if (Desktop.isDesktopSupported() && entries.isNotEmpty()) {
                     val dialog = createNonModalDialog(message,extension)
                     dialog.isVisible = true
                 }
@@ -61,7 +63,7 @@ abstract class PerformScan {
         val dialog: JDialog
         pane.optionType = JOptionPane.PLAIN_MESSAGE
         pane.message = message
-        dialog = pane.createDialog(null,title)
+        dialog = pane.createDialog(Frame.getFrames()[0],title)
         dialog.isModal = false
         dialog.defaultCloseOperation = JDialog.DISPOSE_ON_CLOSE
         return dialog
@@ -70,7 +72,7 @@ abstract class PerformScan {
     private fun getScanResults(results: Results?): List<String> {
         val output = mutableListOf<String>()
         if (results == null) {
-            output.add("Scan failed. No results.")
+            output.add("Scan failed. No results. Check the logs for possible reasons.")
             return output.toList()
         }
         if (results.stage1Detections.isNotEmpty()) {
@@ -79,8 +81,6 @@ abstract class PerformScan {
                 output.add(entry)
                 output.add("\n");
             }
-        } else {
-            output.add("No stage 1 infections found.")
         }
         if (results.stage2Detections.isNotEmpty()) {
             output.add("Stage 2 infections:")
@@ -88,8 +88,6 @@ abstract class PerformScan {
                 output.add(entry)
                 output.add("\n");
             }
-        } else {
-            output.add("No stage 2 infections found.")
         }
 
         return output.toList()
