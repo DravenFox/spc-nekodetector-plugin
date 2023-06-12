@@ -7,12 +7,9 @@ This is a plugin for [ServerPackCreator](https://github.com/Griefed/ServerPackCr
 This plugin, once installed, automatically scans your modpack and server pack for infections when you start the generation
 of a new server pack and informs you about any found infections, or if no infections were found.
 
-This plugin currently performs three scans:
+This plugin currently performs two scans:
 - your modpack before generating the server pack
-- the server pack after it was generated, before any ZIP-archive is created
 - final scan after every other task has completed
-
-![example](img/example-scan.png)
 
 ## What is fractureiser?
 
@@ -32,4 +29,4 @@ Your ServerPackCreator installation has a folder called `plugins`.
 Download the spc-nekodetector-plugin JAR-file from the latest release and put it into said `plugin`-folder.
 If you've had ServerPackCreator running whilst installing the plugin, you need to restart ServerPackCreator.
 
-Afterwards, every generation of a server pack will run the aforementiond scans.
+Afterward, every generation of a server pack will run the aforementioned scans.
